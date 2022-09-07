@@ -154,6 +154,7 @@ export const sendTransaction = async (...props) => {
       }
       const response = await fcl.send(ix)
       result = await fcl.tx(response).onceExecuted()
+      return result
     } catch (e) {
       err = e
     }
